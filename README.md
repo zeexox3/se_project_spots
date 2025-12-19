@@ -1,5 +1,7 @@
 # Spots
 
+Link to [GitHub Pages](https://zeexox3.github.io/se_project_spots/)
+
 **Spots** is a profile and gallery interface built using semantic HTML and CSS.
 The project displays a user profile, an editable profile button, and a photo gallery organized into responsive cards.  
 It is designed to adapt smoothly across screen sizes while maintaining a clean look.

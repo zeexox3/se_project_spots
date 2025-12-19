@@ -55,7 +55,7 @@
   transition: 0.3s ease-in-out;
 }
 
-.profile__edit-button_pencil {
+.profile__edit-button-icon {
   width: 19px;
   height: 16px;
   opacity: 0.7;
@@ -66,7 +66,7 @@
   color: rgba(33, 33, 33);
 }
 
-.profile__edit-button:hover .profile__edit-button_pencil {
+.profile__edit-button:hover .profile__edit-button-icon {
   opacity: 1;
 }
 
@@ -85,7 +85,7 @@
   transition: 0.3s ease-in-out;
 }
 
-.profile__add-button_plus {
+.profile__add-button-icon {
   width: 12px;
   height: 12px;
   margin-right: 8px;
