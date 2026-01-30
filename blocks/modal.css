@@ -59,12 +59,7 @@
   top: 0;
   right: -52.5px;
   background-image: url(../images/image_close_icon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  background-size: contain;
   opacity: 1;
-  transition: 0.3s ease-in-out;
 }
 
 .modal__close-button:hover {
@@ -214,7 +209,6 @@
 
   .modal__caption {
     max-width: 175px;
-    height: 27px;
     font-size: 16px;
   }
 }
