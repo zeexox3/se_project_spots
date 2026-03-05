@@ -129,6 +129,7 @@
 }
 
 .modal__error {
+  visibility: hidden;
   display: block;
   width: 100%;
   margin-top: 8px;
@@ -137,6 +138,10 @@
   line-height: 18px;
   font-size: 16px;
   color: #ff0000b2;
+}
+
+.modal__error_visible {
+  visibility: visible;
 }
 
 .modal__submit-button {
@@ -155,7 +160,6 @@
 }
 
 .modal__submit-button:disabled {
-  opacity: 0.5;
   cursor: default;
   pointer-events: none;
 }
