@@ -1,3 +1,24 @@
+import "./index.css";
+
+import logo from "../images/logo.svg";
+import avatar from "../images/avatar.jpg";
+import pencil from "../images/pencil.svg";
+import plus from "../images/plus.svg";
+
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  disableButton,
+} from "../scripts/validation.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".header__logo").src = logo;
+  document.querySelector(".profile__avatar").src = avatar;
+  document.querySelector(".profile__edit-button-icon").src = pencil;
+  document.querySelector(".profile__add-button-icon").src = plus;
+});
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -34,11 +55,10 @@ const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseButton = editProfileModal.querySelector(
   ".modal__close-button",
 );
+
 const editProfileForm = document.forms["editProfileForm"];
-const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input",
-);
-const editProfileDescriptionInput = editProfileModal.querySelector(
+const editProfileNameInput = document.querySelector("#profile-name-input");
+const editProfileDescriptionInput = document.querySelector(
   "#profile-description-input",
 );
 
@@ -46,8 +66,8 @@ const newPostButton = document.querySelector(".profile__add-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
 const newPostForm = document.forms["newPostForm"];
-const newPostLinkInput = newPostModal.querySelector("#image-link-input");
-const newPostCaptionInput = newPostModal.querySelector("#image-caption-input");
+const newPostLinkInput = document.querySelector("#image-link-input");
+const newPostCaptionInput = document.querySelector("#image-caption-input");
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
@@ -94,15 +114,6 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function handleEscClose(evt) {
-  if (evt.key === "Escape") {
-    const openedModal = document.querySelector(".modal_is-opened");
-    if (openedModal) {
-      closeModal(openedModal);
-    }
-  }
-}
-
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", handleEscClose);
@@ -113,37 +124,42 @@ function closeModal(modal) {
   document.removeEventListener("keydown", handleEscClose);
 }
 
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) closeModal(openedModal);
+  }
+}
+
 editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+
   resetValidation(
     editProfileForm,
     [editProfileNameInput, editProfileDescriptionInput],
     settings,
   );
+
   openModal(editProfileModal);
 });
 
-editProfileCloseButton.addEventListener("click", function () {
-  closeModal(editProfileModal);
-});
+editProfileCloseButton.addEventListener("click", () =>
+  closeModal(editProfileModal),
+);
 
-newPostButton.addEventListener("click", function () {
-  openModal(newPostModal);
-});
+newPostButton.addEventListener("click", () => openModal(newPostModal));
 
-newPostCloseButton.addEventListener("click", function () {
-  closeModal(newPostModal);
-});
+newPostCloseButton.addEventListener("click", () => closeModal(newPostModal));
 
-previewModalCloseBtn.addEventListener("click", function () {
-  closeModal(previewModal);
-});
+previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
+
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+
   closeModal(editProfileModal);
 }
 
@@ -165,17 +181,12 @@ function handleAddCardSubmit(evt) {
 
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 
-initialCards.forEach(function (item) {
-  const cardElement = getCardElement(item);
-  cardList.append(cardElement);
+initialCards.forEach((item) => {
+  cardList.append(getCardElement(item));
 });
 
-const modals = document.querySelectorAll(".modal");
-
-modals.forEach((modal) => {
+document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
-    if (evt.target === modal) {
-      closeModal(modal);
-    }
+    if (evt.target === modal) closeModal(modal);
   });
 });

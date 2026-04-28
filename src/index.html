@@ -7,44 +7,33 @@
     <meta name="description" content="TripleTen Spots Project" />
     <meta name="author" content="Amariah Fannin" />
     <meta name="content" content="spots, bessie, coleman" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img
-          src="./images/logo.svg"
-          alt="Spots Logo Image"
-          class="header__logo"
-        />
+        <img alt="Spots Logo Image" class="header__logo" />
       </header>
+
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="./images/avatar.jpg"
-            alt="Current Avatar Image"
-            class="profile__avatar"
-          />
+          <img alt="Current Avatar Image" class="profile__avatar" />
+
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
+
             <button type="button" class="profile__edit-button">
-              <img
-                src="./images/pencil.svg"
-                alt="Pencil Icon"
-                class="profile__edit-button-icon"
-              />Edit Profile
+              <img alt="Pencil Icon" class="profile__edit-button-icon" />
+              Edit Profile
             </button>
           </div>
+
           <button type="button" class="profile__add-button">
-            <img
-              src="./images/plus.svg"
-              alt="Plus Icon"
-              class="profile__add-button-icon"
-            />New Post
+            <img alt="Plus Icon" class="profile__add-button-icon" />
+            New Post
           </button>
         </section>
+
         <section class="cards page__section">
           <ul class="cards__list">
             <template id="card-template">
@@ -60,13 +49,16 @@
           </ul>
         </section>
       </main>
+
       <footer class="footer">
         <p class="footer__copyright">2023 © Spots</p>
       </footer>
+
       <div id="edit-profile-modal" class="modal">
         <div class="modal__container">
           <button type="button" class="modal__close-button"></button>
           <h2 class="modal__title">Edit profile</h2>
+
           <form name="editProfileForm" class="modal__form" novalidate>
             <label for="profile-name-input" class="modal__label">
               Name
@@ -81,6 +73,7 @@
               />
               <span id="profile-name-input-error" class="modal__error"></span>
             </label>
+
             <label for="profile-description-input" class="modal__label">
               Description
               <input
@@ -97,14 +90,17 @@
                 class="modal__error"
               ></span>
             </label>
+
             <button type="submit" class="modal__submit-button">Save</button>
           </form>
         </div>
       </div>
+
       <div id="new-post-modal" class="modal">
         <div class="modal__container">
           <button type="button" class="modal__close-button"></button>
           <h2 class="modal__title">New post</h2>
+
           <form name="newPostForm" class="modal__form" novalidate>
             <label for="image-link-input" class="modal__label">
               Image Link
@@ -117,6 +113,7 @@
               />
               <span id="image-link-input-error" class="modal__error"></span>
             </label>
+
             <label for="image-caption-input" class="modal__label">
               Caption
               <input
@@ -130,10 +127,12 @@
               />
               <span id="image-caption-input-error" class="modal__error"></span>
             </label>
+
             <button type="submit" class="modal__submit-button">Save</button>
           </form>
         </div>
       </div>
+
       <div id="preview-modal" class="modal modal_type_preview">
         <div class="modal__image-container">
           <button
@@ -145,7 +144,5 @@
         </div>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validation.js"></script>
   </body>
 </html>
