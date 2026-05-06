@@ -241,6 +241,14 @@
   opacity: 1;
 }
 
+.modal__container_type_delete {
+  overflow: visible;
+}
+
+.modal__close-button_type_delete {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 844px) {
   .modal__container {
     margin: 0 10px;
@@ -301,5 +309,27 @@
 
   .modal__image {
     max-width: unset;
+  }
+
+  .modal__form-delete {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal__submit-button--delete {
+    max-width: 156px;
+  }
+
+  .modal__submit-button--cancel {
+    max-width: 156px;
+  }
+
+  .modal__close-button_type_delete {
+    visibility: visible;
+    position: absolute;
+    top: -48px;
+    right: 0;
+    background-image: url(../images/image_close_icon.svg);
+    opacity: 1;
   }
 }

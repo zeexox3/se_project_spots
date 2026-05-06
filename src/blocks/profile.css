@@ -10,6 +10,7 @@
   height: 190px;
   margin-right: 20px;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .profile__avatar-btn {
