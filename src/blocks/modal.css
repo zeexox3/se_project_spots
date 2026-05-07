@@ -156,7 +156,9 @@
   border: none;
 }
 
-.modal__submit-button:not(:disabled):hover {
+.modal__submit-button:not(:disabled):not(.modal__submit-button--delete):not(
+    .modal__submit-button--cancel
+  ):hover {
   opacity: 0.4;
 }
 
@@ -196,6 +198,55 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
+}
+
+.modal__form-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__title-remove {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.modal__submit-button--delete {
+  background-color: rgba(255, 101, 101, 1);
+  color: black;
+  transition: 0.3s ease;
+}
+
+.modal__submit-button--delete:hover {
+  background-color: rgba(255, 51, 51, 1);
+  opacity: 1;
+}
+
+.modal__submit-button--cancel {
+  color: black;
+  background-color: white;
+  border: 1px solid rgba(33, 33, 33, 1);
+}
+
+.modal__submit-button--cancel:hover {
+  background-color: rgba(33, 33, 33, 1);
+  color: white;
+  border: none;
+  opacity: 1;
+}
+
+.modal__container_type_delete {
+  overflow: visible;
+}
+
+.modal__close-button_type_delete {
+  visibility: hidden;
 }
 
 @media screen and (max-width: 844px) {
@@ -258,5 +309,27 @@
 
   .modal__image {
     max-width: unset;
+  }
+
+  .modal__form-delete {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal__submit-button--delete {
+    max-width: 156px;
+  }
+
+  .modal__submit-button--cancel {
+    max-width: 156px;
+  }
+
+  .modal__close-button_type_delete {
+    visibility: visible;
+    position: absolute;
+    top: -48px;
+    right: 0;
+    background-image: url(../images/image_close_icon.svg);
+    opacity: 1;
   }
 }

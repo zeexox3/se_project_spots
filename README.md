@@ -99,4 +99,4 @@ This project is a part of the TripleTen curriculum, demonstrating a clean layout
 
 ## Project Pitch Video
 
-- Check out [this video](https://drive.google.com/file/d/13pMawwNXjO-ElLxU5-esjMefiuX-1TZV/view?usp=sharing), where I describe my project.
+- Check out [this video](https://drive.google.com/file/d/1Bec6xXHWZZJicSTW_u2ICAXxNu-MdgJY/view?usp=sharing), where I describe my project.
