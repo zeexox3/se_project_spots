@@ -203,9 +203,6 @@ function handleEditProfileSubmit(evt) {
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
-  const submitButton = newPostForm.querySelector(".modal__submit-button");
-  disableButton(submitButton, settings);
-
   const submitBtn = evt.submitter;
   setButtonText(submitBtn, true);
 
@@ -219,6 +216,7 @@ function handleAddCardSubmit(evt) {
       cardList.prepend(cardElement);
 
       newPostForm.reset();
+      disableButton(submitBtn, settings);
       closeModal(newPostModal);
     })
     .catch(console.error)
@@ -239,6 +237,7 @@ function handleAvatarSubmit(evt) {
       profileAvatarEl.src = data.avatar;
 
       avatarForm.reset();
+      disableButton(submitBtn, settings);
       closeModal(avatarModal);
     })
     .catch(console.error)
